@@ -1,3 +1,7 @@
+let humanScore = 0;
+let computerScore = 0;
+
+
 function getComputerChoice() {
     let choice = Math.random();
     let answer = "rock";
@@ -20,4 +24,20 @@ function getHumanChoice() {
         else
             i++;
     return choice;
+}
+
+function playRound(humanChoice, computerChoice) {
+    let winner = "none";
+    console.log(humanChoice);
+    console.log(computerChoice);
+    if ((humanChoice === "rock" && computerChoice === "scissors") || 
+        (humanChoice === "paper" && computerChoice === "rock") ||
+        (humanChoice === "scissors" && computerChoice === "paper"))
+        winner = "human";
+    else if ((computerChoice === "rock" && humanChoice === "scissors") || 
+    (computerChoice === "paper" && humanChoice === "rock") ||
+    (computerChoice === "scissors" && humanChoice === "paper"))
+        winner = "computer";
+    console.log(winner);
+    return winner;
 }
